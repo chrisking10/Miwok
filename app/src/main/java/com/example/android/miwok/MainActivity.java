@@ -40,4 +40,19 @@ public class MainActivity extends AppCompatActivity {
 		Intent numbers =  new Intent(this, NumberActivity.class);
 		startActivity(numbers);
 	}
+	
+	public void openFamilyMembers (View view) {
+		Intent family = new Intent(this, FamilyActivity.class);
+		startActivity(family);
+	}
+	
+	public void openColors (View view) {
+		Intent colors = new Intent(this, ColorsActivity.class);
+		startActivity(colors);
+	}
+	
+	public void openPhrases (View view) {
+		Intent phrases = new Intent(this, PhrasesActivity.class);
+		startActivity(phrases);
+	}
 }
