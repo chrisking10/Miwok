@@ -32,4 +32,6 @@
 	<string name = "Family">Family</string>
 	<string name = "Colors">Colors</string>
 	<string name = "Family_Members">Family Members</string>
+	<string name="Word_Adapter">Word Adapter</string>
+	<string name="Word">Word</string>
 </resources>

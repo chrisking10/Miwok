@@ -22,56 +22,77 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-	
+
 	@Override
-	protected void onCreate (Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// Set the content of the activity to use the activity_main.xml layout file
 		setContentView(R.layout.activity_main);
-		
-		//Initialize TextViews for the 4 Sections
+
+		// Find the View that shows the numbers category
 		TextView numbers = (TextView) findViewById(R.id.numbers);
-		TextView colors = (TextView) findViewById(R.id.colors);
-		TextView familyMembers = (TextView) findViewById(R.id.family);
-		TextView phrases = (TextView) findViewById(R.id.phrases);
-		
-		//Initialize a click listener for Numbers Activity
+
+		// Set a click listener on that View
 		numbers.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the numbers category is clicked on.
 			@Override
-			public void onClick (View v) {
+			public void onClick(View view) {
+				// Create a new intent to open the {@link NumbersActivity}
 				Intent numbersIntent = new Intent(MainActivity.this, NumberActivity.class);
+
+				// Start the new activity
 				startActivity(numbersIntent);
 			}
 		});
-		
-		//Initialize a click listener for Colors Activity
-		colors.setOnClickListener(new View.OnClickListener() {
+
+		// Find the View that shows the family category
+		TextView family = (TextView) findViewById(R.id.family);
+
+		// Set a click listener on that View
+		family.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the family category is clicked on.
 			@Override
-			public void onClick (View v) {
+			public void onClick(View view) {
+				// Create a new intent to open the {@link FamilyActivity}
+				Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+
+				// Start the new activity
+				startActivity(familyIntent);
+			}
+		});
+
+		// Find the View that shows the colors category
+		TextView colors = (TextView) findViewById(R.id.colors);
+
+		// Set a click listener on that View
+		colors.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the colors category is clicked on.
+			@Override
+			public void onClick(View view) {
+				// Create a new intent to open the {@link ColorsActivity}
 				Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+
+				// Start the new activity
 				startActivity(colorsIntent);
 			}
 		});
-		
-		//Initialize a click listener for Family Members Activity
-		familyMembers.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick (View v) {
-				Intent familyMembersIntent = new Intent(MainActivity.this, FamilyActivity.class);
-				startActivity(familyMembersIntent);
-			}
-		});
-		
-		//Initialize a click listener for Phrases Activity
+
+		// Find the View that shows the phrases category
+		TextView phrases = (TextView) findViewById(R.id.phrases);
+
+		// Set a click listener on that View
 		phrases.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the phrases category is clicked on.
 			@Override
-			public void onClick (View v) {
+			public void onClick(View view) {
+				// Create a new intent to open the {@link PhrasesActivity}
 				Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+
+				// Start the new activity
 				startActivity(phrasesIntent);
 			}
 		});
-		
-		
 	}
-	
-	
+
 }
