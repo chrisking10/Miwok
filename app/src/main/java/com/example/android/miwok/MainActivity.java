@@ -26,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		// Set the content of the activity to use the activity_main.xml layout file
 		setContentView(R.layout.activity_main);
 		
+		//Initialize TextViews for the 4 Sections
 		TextView numbers = (TextView) findViewById(R.id.numbers);
 		TextView colors = (TextView) findViewById(R.id.colors);
 		TextView familyMembers = (TextView) findViewById(R.id.family);
 		TextView phrases = (TextView) findViewById(R.id.phrases);
 		
+		//Initialize a click listener for Numbers Activity
 		numbers.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick (View v) {
@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 				startActivity(numbersIntent);
 			}
 		});
+		
+		//Initialize a click listener for Colors Activity
 		colors.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick (View v) {
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 				startActivity(colorsIntent);
 			}
 		});
+		
+		//Initialize a click listener for Family Members Activity
 		familyMembers.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick (View v) {
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 				startActivity(familyMembersIntent);
 			}
 		});
+		
+		//Initialize a click listener for Phrases Activity
 		phrases.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick (View v) {
