@@ -36,26 +36,42 @@ public class MainActivity extends AppCompatActivity {
 		// Set the content of the activity to use the activity_main.xml layout file
 		setContentView(R.layout.activity_main);
 		
-		NumbersClickListener clickListener = new NumbersClickListener();
-		
 		TextView numbers = (TextView)findViewById(R.id.numbers);
-		numbers.setOnClickListener(clickListener);
+		TextView colors = (TextView) findViewById(R.id.colors);
+		final TextView familyMembers = (TextView) findViewById(R.id.family);
+		TextView phrases = (TextView) findViewById(R.id.phrases);
+		
+		numbers.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick (View v) {
+				Intent numbersIntent = new Intent(MainActivity.this, NumberActivity.class);
+				startActivity(numbersIntent);
+			}
+		});
+		colors.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick (View v) {
+				Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+				startActivity(colorsIntent);
+			}
+		});
+		familyMembers.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick (View v) {
+				Intent familyMembersIntent = new Intent(MainActivity.this, FamilyActivity.class);
+				startActivity(familyMembersIntent);
+			}
+		});
+		phrases.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick (View v) {
+				Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+				startActivity(phrasesIntent);
+			}
+		});
+		
+		
 	}
 	
 	
-	
-	public void openFamilyMembers (View view) {
-		Intent family = new Intent(this, FamilyActivity.class);
-		startActivity(family);
-	}
-	
-	public void openColors (View view) {
-		Intent colors = new Intent(this, ColorsActivity.class);
-		startActivity(colors);
-	}
-	
-	public void openPhrases (View view) {
-		Intent phrases = new Intent(this, PhrasesActivity.class);
-		startActivity(phrases);
-	}
 }
